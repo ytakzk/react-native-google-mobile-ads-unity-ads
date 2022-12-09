@@ -37,6 +37,8 @@ apply plugin: 'kotlin-android'
 def packageJson = PackageJson.getForProject(project)
 def googleMobileAdsVersion = packageJson['sdkVersions']['android']['googleMobileAds']
 def googleUmpVersion = packageJson['sdkVersions']['android']['googleUmp']
+def unityAdsVersion = packageJson['sdkVersions']['android']['unityAds']
+def unityVersion = packageJson['sdkVersions']['android']['unity']
 def jsonMinSdk = packageJson['sdkVersions']['android']['minSdk']
 def jsonTargetSdk = packageJson['sdkVersions']['android']['targetSdk']
 def jsonCompileSdk = packageJson['sdkVersions']['android']['compileSdk']
@@ -118,6 +120,8 @@ repositories {
 
 dependencies {
   implementation("com.google.android.gms:play-services-ads:${googleMobileAdsVersion}") { force = true; }
+  implementation("com.unity3d.ads:unity-ads:${unityAdsVersion}") { force = true; }
+  implementation("com.google.ads.mediation:unity:${unityVersion}") { force = true; }
   api "com.google.android.ump:user-messaging-platform:${googleUmpVersion}"
 }
 
