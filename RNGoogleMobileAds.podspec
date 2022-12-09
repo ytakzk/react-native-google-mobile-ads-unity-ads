@@ -3,6 +3,7 @@ package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
 google_mobile_ads_sdk_version = package['sdkVersions']['ios']['googleMobileAds']
 google_ump_sdk_version = package['sdkVersions']['ios']['googleUmp']
+google_mobile_ads_mediation_unity_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationUnity']
 
 Pod::Spec.new do |s|
   s.name                = "RNGoogleMobileAds"
@@ -39,6 +40,14 @@ Pod::Spec.new do |s|
 
   # AdMob dependencies
   s.dependency          'Google-Mobile-Ads-SDK', google_mobile_ads_sdk_version
+
+  # Other dependencies
+  if defined?($RNGoogleMobileAdsMediationUnitySDKVersion)
+    Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation Unity SDK version '#{$RNGoogleMobileAdsMediationUnitySDKVersion}'"
+    google_mobile_ads_mediation_unity_sdk_version = $RNGoogleMobileAdsMediationUnitySDKVersion
+  end
+
+  s.dependency          'GoogleMobileAdsMediationUnity', google_mobile_ads_mediation_unity_sdk_version
 
   if defined?($RNGoogleMobileAdsAsStaticFramework)
     Pod::UI.puts "#{s.name}: Using overridden static_framework value of '#{$RNGoogleMobileAdsAsStaticFramework}'"

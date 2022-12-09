@@ -15,10 +15,10 @@
  *
  */
 
-// import { version } from './version';
+import { version } from './version';
 
 // import { SDK_VERSION } from 'react-native-google-mobile-ads';
-export const SDK_VERSION = '1.0.0';
+export const SDK_VERSION = version;
 
 export { default, MobileAds } from './MobileAds';
 export { AdsConsentDebugGeography } from './AdsConsentDebugGeography';
