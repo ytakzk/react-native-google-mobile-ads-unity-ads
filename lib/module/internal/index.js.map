@@ -1,0 +1,1 @@
+{"version":3,"names":["AppModule","Module","NativeError","SharedEventEmitter"],"sourceRoot":"../../src","sources":["index.ts"],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA,SAASA,SAAS,IAAIC,MAAM,QAAQ,UAAU;AAC9C,SAASC,WAAW,QAAQ,eAAe;AAC3C,cAAc,yBAAyB;AACvC,SAASC,kBAAkB,QAAQ,sBAAsB"}
