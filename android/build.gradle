@@ -39,6 +39,7 @@ def googleMobileAdsVersion = packageJson['sdkVersions']['android']['googleMobile
 def googleUmpVersion = packageJson['sdkVersions']['android']['googleUmp']
 def unityAdsVersion = packageJson['sdkVersions']['android']['unityAds']
 def unityVersion = packageJson['sdkVersions']['android']['unity']
+def applovinVersion = packageJson['sdkVersions']['android']['applovin']
 def jsonMinSdk = packageJson['sdkVersions']['android']['minSdk']
 def jsonTargetSdk = packageJson['sdkVersions']['android']['targetSdk']
 def jsonCompileSdk = packageJson['sdkVersions']['android']['compileSdk']
@@ -122,6 +123,7 @@ dependencies {
   implementation("com.google.android.gms:play-services-ads:${googleMobileAdsVersion}") { force = true; }
   implementation("com.unity3d.ads:unity-ads:${unityAdsVersion}") { force = true; }
   implementation("com.google.ads.mediation:unity:${unityVersion}") { force = true; }
+  implementation("com.google.ads.mediation:applovin:${applovinVersion}") { force = true; }
   api "com.google.android.ump:user-messaging-platform:${googleUmpVersion}"
 }
 

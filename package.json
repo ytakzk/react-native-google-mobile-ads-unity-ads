@@ -43,6 +43,7 @@
     "ios": {
       "googleMobileAds": "9.12.0",
       "GoogleMobileAdsMediationUnity": "4.4.1.0",
+      "GoogleMobileAdsMediationAppLovin": "11.6.0.0",
       "googleUmp": "2.0.0"
     },
     "android": {
@@ -53,6 +54,7 @@
       "googleMobileAds": "21.3.0",
       "unityAds": "4.4.1",
       "unity": "4.4.1.0",
+      "applovin": "11.6.0.0",
       "googleUmp": "2.0.0"
     }
   },
