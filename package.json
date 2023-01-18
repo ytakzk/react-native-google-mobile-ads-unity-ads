@@ -1,6 +1,6 @@
 {
   "name": "react-native-google-mobile-ads",
-  "version": "8.2.2",
+  "version": "9.1.0",
   "author": "Invertase <oss@invertase.io> (http://invertase.io)",
   "description": "React Native Google Mobile Ads is an easy way to monetize mobile apps with targeted, in-app advertising.",
   "main": "lib/commonjs/index.js",
@@ -41,19 +41,18 @@
   ],
   "sdkVersions": {
     "ios": {
-      "googleMobileAds": "9.12.0",
+      "googleMobileAds": "9.14.0",
       "GoogleMobileAdsMediationUnity": "4.4.1.0",
       "GoogleMobileAdsMediationAppLovin": "11.6.0.0",
       "GoogleMobileAdsMediationNend": "7.4.0",
-      "GoogleMobileAdsMediationIronsource": "7.2.6.0",
-      "googleUmp": "2.0.0"
+      "GoogleMobileAdsMediationIronsource": "7.2.6.0"
     },
     "android": {
       "minSdk": 19,
       "targetSdk": 30,
       "compileSdk": 31,
       "buildTools": "31.0.0",
-      "googleMobileAds": "21.3.0",
+      "googleMobileAds": "21.4.0",
       "unityAds": "4.4.1",
       "unity": "4.4.1.0",
       "applovin": "11.6.0.0",
@@ -127,6 +126,7 @@
     "@semantic-release/github": "^8.0.6",
     "@semantic-release/npm": "^9.0.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
+    "@testing-library/react-native": "^11.5.0",
     "@types/jest": "^29.2.0",
     "@types/node": "^18.11.7",
     "@types/react": "^18.0.24",
@@ -151,6 +151,7 @@
     "react": "^18.2.0",
     "react-native": "0.70.4",
     "react-native-builder-bob": "^0.20.0",
+    "react-test-renderer": "^18.2.0",
     "rimraf": "^3.0.2",
     "semantic-release": "^19.0.5",
     "shelljs": "^0.8.5",

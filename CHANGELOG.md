@@ -1,3 +1,29 @@
+## [9.1.0](https://github.com/invertase/react-native-google-mobile-ads/compare/v9.0.0...v9.1.0) (2023-01-13)
+
+
+### Features
+
+* **deps:** mobile ads SDK upgrade - iOS 9.14.0 / android 21.4.0 ([c81eeb6](https://github.com/invertase/react-native-google-mobile-ads/commit/c81eeb6c3e6f90c5d70ce3c5719f665e5004e86b))
+
+## [9.0.0](https://github.com/invertase/react-native-google-mobile-ads/compare/v8.2.3...v9.0.0) (2023-01-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* move GAM-exclusive FLUID type to new GAMBanner const
+
+### Bug Fixes
+
+* move GAM-exclusive FLUID type to new GAMBanner const ([85545f6](https://github.com/invertase/react-native-google-mobile-ads/commit/85545f6c2a0b02af3835aabd262632cc1e67172c))
+
+### [8.2.3](https://github.com/invertase/react-native-google-mobile-ads/compare/v8.2.2...v8.2.3) (2023-01-10)
+
+
+### Bug Fixes
+
+* **ios:** adaptive banner should take safe areas into account ([c34fe1a](https://github.com/invertase/react-native-google-mobile-ads/commit/c34fe1ac9a53e523b906fd2014f3f691d8a3fb00))
+* **type:** fixed mobileAds initialize response status type [#515](https://github.com/invertase/react-native-google-mobile-ads/issues/515) ([e0a7d29](https://github.com/invertase/react-native-google-mobile-ads/commit/e0a7d29fd7b5ad5e8f7e054fb3e759058d090c17))
+
 ### [8.2.2](https://github.com/invertase/react-native-google-mobile-ads/compare/v8.2.1...v8.2.2) (2022-11-27)
 
 
