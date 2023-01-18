@@ -12,6 +12,12 @@ buildscript {
     repositories {
       google()
       mavenCentral()
+      maven {
+        url 'https://fan-adn.github.io/nendSDK-Android-lib/library'
+      }
+      maven {
+        url 'https://android-sdk.is.com/'
+      }
     }
 
     dependencies {
@@ -21,6 +27,12 @@ buildscript {
   } else {
     repositories {
       mavenCentral()
+      maven {
+        url 'https://fan-adn.github.io/nendSDK-Android-lib/library'
+      }
+      maven {
+        url 'https://android-sdk.is.com/'
+      }
     }
 
     dependencies {
@@ -118,9 +130,13 @@ android {
 
 repositories {
   google()
-  mavenCentral()
-  maven { url 'https://fan-adn.github.io/nendSDK-Android-lib/library' }
-  maven { url 'https://android-sdk.is.com/' }
+  maven {
+    url 'https://fan-adn.github.io/nendSDK-Android-lib/library'
+  }
+  maven {
+    url 'https://android-sdk.is.com/'
+  }
+  mavenCentral()  
 }
 
 dependencies {
@@ -138,4 +154,3 @@ ReactNative.shared.applyPackageVersion()
 ReactNative.shared.applyDefaultExcludes()
 ReactNative.module.applyAndroidVersions()
 ReactNative.module.applyReactNativeDependency("api")
-
