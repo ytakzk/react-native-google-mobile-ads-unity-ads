@@ -119,6 +119,8 @@ android {
 repositories {
   google()
   mavenCentral()
+  maven { url 'https://fan-adn.github.io/nendSDK-Android-lib/library' }
+  maven { url 'https://android-sdk.is.com/' }
 }
 
 dependencies {
