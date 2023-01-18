@@ -116,13 +116,6 @@ android {
   }
 }
 
-dependencyResolutionManagement {
-  repositories {
-    maven { url 'https://fan-adn.github.io/nendSDK-Android-lib/library' }
-    maven { url 'https://android-sdk.is.com/' }
-  }
-}
-
 repositories {
   google()
   mavenCentral()
