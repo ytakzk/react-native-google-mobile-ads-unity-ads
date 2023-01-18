@@ -119,6 +119,8 @@ android {
 repositories {
   google()
   mavenCentral()
+  maven { url 'https://fan-adn.github.io/nendSDK-Android-lib/library' }
+  maven { url 'https://android-sdk.is.com/' }
 }
 
 dependencies {
@@ -126,8 +128,8 @@ dependencies {
   implementation("com.unity3d.ads:unity-ads:${unityAdsVersion}") { force = true; }
   implementation("com.google.ads.mediation:unity:${unityVersion}") { force = true; }
   implementation("com.google.ads.mediation:applovin:${applovinVersion}") { force = true; }
-  implementation("com.google.ads.mediation:nend:${nendVersion}") { force = true; }
-  implementation("com.google.ads.mediation:ironsource:${ironsourceVersion}") { force = true; }
+  implementation("com.google.ads.mediation:nend:${nendVersion}")
+  implementation("com.google.ads.mediation:ironsource:${ironsourceVersion}")
 
   api "com.google.android.ump:user-messaging-platform:${googleUmpVersion}"
 }
