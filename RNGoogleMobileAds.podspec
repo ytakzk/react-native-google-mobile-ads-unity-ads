@@ -5,6 +5,8 @@ google_mobile_ads_sdk_version = package['sdkVersions']['ios']['googleMobileAds']
 google_ump_sdk_version = package['sdkVersions']['ios']['googleUmp']
 google_mobile_ads_mediation_unity_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationUnity']
 google_mobile_ads_mediation_applovin_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationAppLovin']
+google_mobile_ads_mediation_nend_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationNend']
+google_mobile_ads_mediation_ironsource_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationIronsource']
 
 Pod::Spec.new do |s|
   s.name                = "RNGoogleMobileAds"
@@ -56,6 +58,20 @@ Pod::Spec.new do |s|
   end
 
   s.dependency          'GoogleMobileAdsMediationAppLovin', google_mobile_ads_mediation_applovin_sdk_version
+
+  if defined?($RNGoogleMobileAdsMediationNendSDKVersion)
+    Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation nend SDK version '#{$RNGoogleMobileAdsMediationNendSDKVersion}'"
+    google_mobile_ads_mediation_nend_sdk_version = $RNGoogleMobileAdsMediationNendSDKVersion
+  end
+
+  s.dependency          'GoogleMobileAdsMediationNend', google_mobile_ads_mediation_nend_sdk_version
+
+  if defined?($RNGoogleMobileAdsMediationIronsourceSDKVersion)
+    Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation Applovin Ironsource version '#{$RNGoogleMobileAdsMediationIronsourceSDKVersion}'"
+    google_mobile_ads_mediation_ironsource_sdk_version = $RNGoogleMobileAdsMediationIronsourceSDKVersion
+  end
+
+  s.dependency          'GoogleMobileAdsMediationIronsource', google_mobile_ads_mediation_ironsource_sdk_version
 
   if defined?($RNGoogleMobileAdsAsStaticFramework)
     Pod::UI.puts "#{s.name}: Using overridden static_framework value of '#{$RNGoogleMobileAdsAsStaticFramework}'"

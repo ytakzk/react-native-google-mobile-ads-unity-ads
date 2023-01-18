@@ -40,6 +40,8 @@ def googleUmpVersion = packageJson['sdkVersions']['android']['googleUmp']
 def unityAdsVersion = packageJson['sdkVersions']['android']['unityAds']
 def unityVersion = packageJson['sdkVersions']['android']['unity']
 def applovinVersion = packageJson['sdkVersions']['android']['applovin']
+def nendVersion = packageJson['sdkVersions']['android']['nend']
+def ironsourceVersion = packageJson['sdkVersions']['android']['ironsource']
 def jsonMinSdk = packageJson['sdkVersions']['android']['minSdk']
 def jsonTargetSdk = packageJson['sdkVersions']['android']['targetSdk']
 def jsonCompileSdk = packageJson['sdkVersions']['android']['compileSdk']
@@ -124,6 +126,9 @@ dependencies {
   implementation("com.unity3d.ads:unity-ads:${unityAdsVersion}") { force = true; }
   implementation("com.google.ads.mediation:unity:${unityVersion}") { force = true; }
   implementation("com.google.ads.mediation:applovin:${applovinVersion}") { force = true; }
+  implementation("com.google.ads.mediation:nend:${nendVersion}") { force = true; }
+  implementation("com.google.ads.mediation:ironsource:${ironsourceVersion}") { force = true; }
+
   api "com.google.android.ump:user-messaging-platform:${googleUmpVersion}"
 }
 
