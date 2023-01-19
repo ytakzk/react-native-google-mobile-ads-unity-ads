@@ -7,6 +7,7 @@ google_mobile_ads_mediation_unity_sdk_version = package['sdkVersions']['ios']['G
 google_mobile_ads_mediation_applovin_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationAppLovin']
 google_mobile_ads_mediation_nend_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationNend']
 google_mobile_ads_mediation_ironsource_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationIronsource']
+google_mobile_ads_mediation_pangle_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationPanglee']
 
 Pod::Spec.new do |s|
   s.name                = "RNGoogleMobileAds"
@@ -67,11 +68,19 @@ Pod::Spec.new do |s|
   s.dependency          'GoogleMobileAdsMediationNend', google_mobile_ads_mediation_nend_sdk_version
 
   if defined?($RNGoogleMobileAdsMediationIronsourceSDKVersion)
-    Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation Applovin Ironsource version '#{$RNGoogleMobileAdsMediationIronsourceSDKVersion}'"
+    Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation Ironsource version '#{$RNGoogleMobileAdsMediationIronsourceSDKVersion}'"
     google_mobile_ads_mediation_ironsource_sdk_version = $RNGoogleMobileAdsMediationIronsourceSDKVersion
   end
 
   s.dependency          'GoogleMobileAdsMediationIronsource', google_mobile_ads_mediation_ironsource_sdk_version
+
+  if defined?($RNGoogleMobileAdsMediationPangleSDKVersion)
+    Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation Pangle version '#{$RNGoogleMobileAdsMediationPangleSDKVersion}'"
+    google_mobile_ads_mediation_pangle_sdk_version = $RNGoogleMobileAdsMediationPangleSDKVersion
+  end
+
+  s.dependency          'GoogleMobileAdsMediationPangle', google_mobile_ads_mediation_pangle_sdk_version
+
 
   if defined?($RNGoogleMobileAdsAsStaticFramework)
     Pod::UI.puts "#{s.name}: Using overridden static_framework value of '#{$RNGoogleMobileAdsAsStaticFramework}'"

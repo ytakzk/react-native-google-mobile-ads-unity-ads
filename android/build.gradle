@@ -54,6 +54,7 @@ def unityVersion = packageJson['sdkVersions']['android']['unity']
 def applovinVersion = packageJson['sdkVersions']['android']['applovin']
 def nendVersion = packageJson['sdkVersions']['android']['nend']
 def ironsourceVersion = packageJson['sdkVersions']['android']['ironsource']
+def pangleVersion = packageJson['sdkVersions']['android']['pangle']
 def jsonMinSdk = packageJson['sdkVersions']['android']['minSdk']
 def jsonTargetSdk = packageJson['sdkVersions']['android']['targetSdk']
 def jsonCompileSdk = packageJson['sdkVersions']['android']['compileSdk']
@@ -136,6 +137,9 @@ repositories {
   maven {
     url 'https://android-sdk.is.com/'
   }
+  maven {
+    url 'https://artifact.bytedance.com/repository/pangle/'
+  }
   mavenCentral()  
 }
 
@@ -146,6 +150,7 @@ dependencies {
   implementation("com.google.ads.mediation:applovin:${applovinVersion}") { force = true; }
   implementation("com.google.ads.mediation:nend:${nendVersion}") { force = true; }
   implementation("com.google.ads.mediation:ironsource:${ironsourceVersion}") { force = true; }
+  implementation("com.google.ads.mediation:pangle:${pangleVersion}") { force = true; }
 
   api "com.google.android.ump:user-messaging-platform:${googleUmpVersion}"
 }
