@@ -1,5 +1,20 @@
 import io.invertase.gradle.common.PackageJson
 
+def packageJson = PackageJson.getForProject(project)
+def googleMobileAdsVersion = packageJson['sdkVersions']['android']['googleMobileAds']
+def googleUmpVersion = packageJson['sdkVersions']['android']['googleUmp']
+def unityAdsVersion = packageJson['sdkVersions']['android']['unityAds']
+def unityVersion = packageJson['sdkVersions']['android']['unity']
+def applovinVersion = packageJson['sdkVersions']['android']['applovin']
+def nendVersion = packageJson['sdkVersions']['android']['nend']
+def ironsourceVersion = packageJson['sdkVersions']['android']['ironsource']
+def pangleVersion = packageJson['sdkVersions']['android']['pangle']
+def jsonMinSdk = packageJson['sdkVersions']['android']['minSdk']
+def jsonTargetSdk = packageJson['sdkVersions']['android']['targetSdk']
+def jsonCompileSdk = packageJson['sdkVersions']['android']['compileSdk']
+def jsonBuildTools = packageJson['sdkVersions']['android']['buildTools']
+
+
 buildscript {
   ext.getExtOrDefault = {name, version ->
     return rootProject.ext.has(name) ? rootProject.ext.get(name) : version
@@ -57,20 +72,6 @@ plugins {
   id "io.invertase.gradle.build" version "1.5"
 }
 apply plugin: 'kotlin-android'
-
-def packageJson = PackageJson.getForProject(project)
-def googleMobileAdsVersion = packageJson['sdkVersions']['android']['googleMobileAds']
-def googleUmpVersion = packageJson['sdkVersions']['android']['googleUmp']
-def unityAdsVersion = packageJson['sdkVersions']['android']['unityAds']
-def unityVersion = packageJson['sdkVersions']['android']['unity']
-def applovinVersion = packageJson['sdkVersions']['android']['applovin']
-def nendVersion = packageJson['sdkVersions']['android']['nend']
-def ironsourceVersion = packageJson['sdkVersions']['android']['ironsource']
-def pangleVersion = packageJson['sdkVersions']['android']['pangle']
-def jsonMinSdk = packageJson['sdkVersions']['android']['minSdk']
-def jsonTargetSdk = packageJson['sdkVersions']['android']['targetSdk']
-def jsonCompileSdk = packageJson['sdkVersions']['android']['compileSdk']
-def jsonBuildTools = packageJson['sdkVersions']['android']['buildTools']
 
 project.ext {
   set('react-native', [
