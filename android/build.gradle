@@ -18,6 +18,9 @@ buildscript {
       maven {
         url 'https://android-sdk.is.com/'
       }
+      maven {
+        url 'https://artifact.bytedance.com/repository/pangle/'
+      }
     }
 
     dependencies {
@@ -33,10 +36,19 @@ buildscript {
       maven {
         url 'https://android-sdk.is.com/'
       }
+      maven {
+        url 'https://artifact.bytedance.com/repository/pangle/'
+      }
     }
 
     dependencies {
       classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${getExtOrDefault('kotlinVersion', '1.6.10')}"
+    
+      implementation("com.google.ads.mediation:nend:${nendVersion}") { force = true; }
+      implementation("com.google.ads.mediation:ironsource:${ironsourceVersion}") { force = true; }
+      implementation("com.google.ads.mediation:pangle:${pangleVersion}") { force = true; }
+
+    
     }
   }
 }
