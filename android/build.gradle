@@ -1,5 +1,39 @@
 import io.invertase.gradle.common.PackageJson
 
+buildscript {
+  ext.getExtOrDefault = {name, version ->
+    return rootProject.ext.has(name) ? rootProject.ext.get(name) : version
+  }
+
+  // The Android Gradle plugin is only required when opening the android folder stand-alone.
+  // This avoids unnecessary downloads and potential conflicts when the library is included as a
+  // module dependency in an application project.
+  if (project == rootProject) {
+    repositories {
+      google()
+      mavenCentral()
+    }
+
+    dependencies {
+      classpath("com.android.tools.build:gradle:7.0.4")
+      classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${getExtOrDefault('kotlinVersion', '1.6.10')}"
+    }
+  } else {
+    repositories {
+      mavenCentral()
+    }
+
+    dependencies {
+      classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${getExtOrDefault('kotlinVersion', '1.6.10')}"
+    }
+  }
+}
+
+plugins {
+  id "io.invertase.gradle.build" version "1.5"
+}
+apply plugin: 'kotlin-android'
+
 def packageJson = PackageJson.getForProject(project)
 def googleMobileAdsVersion = packageJson['sdkVersions']['android']['googleMobileAds']
 def googleUmpVersion = packageJson['sdkVersions']['android']['googleUmp']
@@ -13,65 +47,6 @@ def jsonMinSdk = packageJson['sdkVersions']['android']['minSdk']
 def jsonTargetSdk = packageJson['sdkVersions']['android']['targetSdk']
 def jsonCompileSdk = packageJson['sdkVersions']['android']['compileSdk']
 def jsonBuildTools = packageJson['sdkVersions']['android']['buildTools']
-
-
-buildscript {
-  ext.getExtOrDefault = {name, version ->
-    return rootProject.ext.has(name) ? rootProject.ext.get(name) : version
-  }
-
-  // The Android Gradle plugin is only required when opening the android folder stand-alone.
-  // This avoids unnecessary downloads and potential conflicts when the library is included as a
-  // module dependency in an application project.
-  if (project == rootProject) {
-    repositories {
-      google()
-      mavenCentral()
-      maven {
-        url 'https://fan-adn.github.io/nendSDK-Android-lib/library'
-      }
-      maven {
-        url 'https://android-sdk.is.com/'
-      }
-      maven {
-        url 'https://artifact.bytedance.com/repository/pangle/'
-      }
-    }
-
-    dependencies {
-      classpath("com.android.tools.build:gradle:7.0.4")
-      classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${getExtOrDefault('kotlinVersion', '1.6.10')}"
-    }
-  } else {
-    repositories {
-      mavenCentral()
-      maven {
-        url 'https://fan-adn.github.io/nendSDK-Android-lib/library'
-      }
-      maven {
-        url 'https://android-sdk.is.com/'
-      }
-      maven {
-        url 'https://artifact.bytedance.com/repository/pangle/'
-      }
-    }
-
-    dependencies {
-      classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${getExtOrDefault('kotlinVersion', '1.6.10')}"
-    
-      implementation("com.google.ads.mediation:nend:${nendVersion}") { force = true; }
-      implementation("com.google.ads.mediation:ironsource:${ironsourceVersion}") { force = true; }
-      implementation("com.google.ads.mediation:pangle:${pangleVersion}") { force = true; }
-
-    
-    }
-  }
-}
-
-plugins {
-  id "io.invertase.gradle.build" version "1.5"
-}
-apply plugin: 'kotlin-android'
 
 project.ext {
   set('react-native', [
@@ -123,6 +98,7 @@ if (!appJSONGoogleMobileAdsAppIDString) {
 }
 
 android {
+  compileSdkVersion 28
   defaultConfig {
     multiDexEnabled true
     manifestPlaceholders = [
@@ -144,16 +120,7 @@ android {
 
 repositories {
   google()
-  maven {
-    url 'https://fan-adn.github.io/nendSDK-Android-lib/library'
-  }
-  maven {
-    url 'https://android-sdk.is.com/'
-  }
-  maven {
-    url 'https://artifact.bytedance.com/repository/pangle/'
-  }
-  mavenCentral()  
+  mavenCentral()
 }
 
 dependencies {
