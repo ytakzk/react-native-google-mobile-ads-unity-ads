@@ -125,8 +125,8 @@ repositories {
 
 dependencies {
   implementation("com.google.android.gms:play-services-ads:${googleMobileAdsVersion}") { force = true; }
-  implementation("com.unity3d.ads:unity-ads:${unityAdsVersion}") { force = true; }
-  implementation("com.google.ads.mediation:unity:${unityVersion}") { force = true; }
+  // implementation("com.unity3d.ads:unity-ads:${unityAdsVersion}") { force = true; }
+  // implementation("com.google.ads.mediation:unity:${unityVersion}") { force = true; }
   implementation("com.google.ads.mediation:applovin:${applovinVersion}") { force = true; }
   // implementation("com.google.ads.mediation:nend:${nendVersion}") { force = true; }
   // implementation("com.google.ads.mediation:ironsource:${ironsourceVersion}") { force = true; }
