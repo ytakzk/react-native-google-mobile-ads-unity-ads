@@ -128,9 +128,9 @@ dependencies {
   implementation("com.unity3d.ads:unity-ads:${unityAdsVersion}") { force = true; }
   implementation("com.google.ads.mediation:unity:${unityVersion}") { force = true; }
   implementation("com.google.ads.mediation:applovin:${applovinVersion}") { force = true; }
-  implementation("com.google.ads.mediation:nend:${nendVersion}") { force = true; }
-  implementation("com.google.ads.mediation:ironsource:${ironsourceVersion}") { force = true; }
-  implementation("com.google.ads.mediation:pangle:${pangleVersion}") { force = true; }
+  // implementation("com.google.ads.mediation:nend:${nendVersion}") { force = true; }
+  // implementation("com.google.ads.mediation:ironsource:${ironsourceVersion}") { force = true; }
+  // implementation("com.google.ads.mediation:pangle:${pangleVersion}") { force = true; }
 
   api "com.google.android.ump:user-messaging-platform:${googleUmpVersion}"
 }
