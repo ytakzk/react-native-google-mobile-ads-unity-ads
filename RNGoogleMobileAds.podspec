@@ -6,7 +6,7 @@ google_ump_sdk_version = package['sdkVersions']['ios']['googleUmp']
 google_mobile_ads_mediation_applovin_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationAppLovin']
 google_mobile_ads_mediation_nend_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationNend']
 google_mobile_ads_mediation_ironsource_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationIronsource']
-google_mobile_ads_mediation_pangle_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationPanglee']
+google_mobile_ads_mediation_pangle_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationPangle']
 
 Pod::Spec.new do |s|
   s.name                = "RNGoogleMobileAds"
