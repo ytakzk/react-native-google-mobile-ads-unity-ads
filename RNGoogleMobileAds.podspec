@@ -28,9 +28,6 @@ Pod::Spec.new do |s|
   # React Native dependencies
   s.dependency          'React-Core'
 
-  # for ironsource
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-
   # Other dependencies
   if defined?($RNGoogleUmpSDKVersion)
     Pod::UI.puts "#{s.name}: Using user specified Google UMP SDK version '#{$RNGoogleUmpSDKVersion}'"
@@ -53,21 +50,6 @@ Pod::Spec.new do |s|
   end
 
   s.dependency          'GoogleMobileAdsMediationAppLovin', google_mobile_ads_mediation_applovin_sdk_version
-
-  # if defined?($RNGoogleMobileAdsMediationNendSDKVersion)
-  #   Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation nend SDK version '#{$RNGoogleMobileAdsMediationNendSDKVersion}'"
-  #   google_mobile_ads_mediation_nend_sdk_version = $RNGoogleMobileAdsMediationNendSDKVersion
-  # end
-
-  # s.dependency          'GoogleMobileAdsMediationNend', google_mobile_ads_mediation_nend_sdk_version
-
-  # if defined?($RNGoogleMobileAdsMediationPangleSDKVersion)
-  #   Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation Pangle version '#{$RNGoogleMobileAdsMediationPangleSDKVersion}'"
-  #   google_mobile_ads_mediation_pangle_sdk_version = $RNGoogleMobileAdsMediationPangleSDKVersion
-  # end
-
-  # s.dependency          'GoogleMobileAdsMediationPangle', google_mobile_ads_mediation_pangle_sdk_version
-
 
   if defined?($RNGoogleMobileAdsAsStaticFramework)
     Pod::UI.puts "#{s.name}: Using overridden static_framework value of '#{$RNGoogleMobileAdsAsStaticFramework}'"
