@@ -51,19 +51,19 @@ Pod::Spec.new do |s|
 
   s.dependency          'GoogleMobileAdsMediationAppLovin', google_mobile_ads_mediation_applovin_sdk_version
 
-  if defined?($RNGoogleMobileAdsMediationNendSDKVersion)
-    Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation nend SDK version '#{$RNGoogleMobileAdsMediationNendSDKVersion}'"
-    google_mobile_ads_mediation_nend_sdk_version = $RNGoogleMobileAdsMediationNendSDKVersion
-  end
+  # if defined?($RNGoogleMobileAdsMediationNendSDKVersion)
+  #   Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation nend SDK version '#{$RNGoogleMobileAdsMediationNendSDKVersion}'"
+  #   google_mobile_ads_mediation_nend_sdk_version = $RNGoogleMobileAdsMediationNendSDKVersion
+  # end
 
-  s.dependency          'GoogleMobileAdsMediationNend', google_mobile_ads_mediation_nend_sdk_version
+  # s.dependency          'GoogleMobileAdsMediationNend', google_mobile_ads_mediation_nend_sdk_version
 
-  if defined?($RNGoogleMobileAdsMediationPangleSDKVersion)
-    Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation Pangle version '#{$RNGoogleMobileAdsMediationPangleSDKVersion}'"
-    google_mobile_ads_mediation_pangle_sdk_version = $RNGoogleMobileAdsMediationPangleSDKVersion
-  end
+  # if defined?($RNGoogleMobileAdsMediationPangleSDKVersion)
+  #   Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation Pangle version '#{$RNGoogleMobileAdsMediationPangleSDKVersion}'"
+  #   google_mobile_ads_mediation_pangle_sdk_version = $RNGoogleMobileAdsMediationPangleSDKVersion
+  # end
 
-  s.dependency          'GoogleMobileAdsMediationPangle', google_mobile_ads_mediation_pangle_sdk_version
+  # s.dependency          'GoogleMobileAdsMediationPangle', google_mobile_ads_mediation_pangle_sdk_version
 
 
   if defined?($RNGoogleMobileAdsAsStaticFramework)
