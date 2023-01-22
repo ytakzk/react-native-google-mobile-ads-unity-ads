@@ -3,7 +3,6 @@ package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
 google_mobile_ads_sdk_version = package['sdkVersions']['ios']['googleMobileAds']
 google_ump_sdk_version = package['sdkVersions']['ios']['googleUmp']
-google_mobile_ads_mediation_unity_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationUnity']
 google_mobile_ads_mediation_applovin_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationAppLovin']
 google_mobile_ads_mediation_nend_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationNend']
 google_mobile_ads_mediation_ironsource_sdk_version = package['sdkVersions']['ios']['GoogleMobileAdsMediationIronsource']
@@ -44,14 +43,6 @@ Pod::Spec.new do |s|
 
   # AdMob dependencies
   s.dependency          'Google-Mobile-Ads-SDK', google_mobile_ads_sdk_version
-
-  # Other dependencies
-  if defined?($RNGoogleMobileAdsMediationUnitySDKVersion)
-    Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation Unity SDK version '#{$RNGoogleMobileAdsMediationUnitySDKVersion}'"
-    google_mobile_ads_mediation_unity_sdk_version = $RNGoogleMobileAdsMediationUnitySDKVersion
-  end
-
-  s.dependency          'GoogleMobileAdsMediationUnity', google_mobile_ads_mediation_unity_sdk_version
 
   if defined?($RNGoogleMobileAdsMediationAppLovinSDKVersion)
     Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation Applovin SDK version '#{$RNGoogleMobileAdsMediationAppLovinSDKVersion}'"
