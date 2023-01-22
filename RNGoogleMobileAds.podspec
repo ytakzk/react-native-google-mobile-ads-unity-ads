@@ -28,6 +28,9 @@ Pod::Spec.new do |s|
   # React Native dependencies
   s.dependency          'React-Core'
 
+  # for ironsource
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
   # Other dependencies
   if defined?($RNGoogleUmpSDKVersion)
     Pod::UI.puts "#{s.name}: Using user specified Google UMP SDK version '#{$RNGoogleUmpSDKVersion}'"
