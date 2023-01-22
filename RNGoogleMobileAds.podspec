@@ -58,13 +58,6 @@ Pod::Spec.new do |s|
 
   s.dependency          'GoogleMobileAdsMediationNend', google_mobile_ads_mediation_nend_sdk_version
 
-  if defined?($RNGoogleMobileAdsMediationIronsourceSDKVersion)
-    Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation Ironsource version '#{$RNGoogleMobileAdsMediationIronsourceSDKVersion}'"
-    google_mobile_ads_mediation_ironsource_sdk_version = $RNGoogleMobileAdsMediationIronsourceSDKVersion
-  end
-
-  s.dependency          'GoogleMobileAdsMediationIronsource', google_mobile_ads_mediation_ironsource_sdk_version
-
   if defined?($RNGoogleMobileAdsMediationPangleSDKVersion)
     Pod::UI.puts "#{s.name}: Using user specified Mobile-Ads Mediation Pangle version '#{$RNGoogleMobileAdsMediationPangleSDKVersion}'"
     google_mobile_ads_mediation_pangle_sdk_version = $RNGoogleMobileAdsMediationPangleSDKVersion
